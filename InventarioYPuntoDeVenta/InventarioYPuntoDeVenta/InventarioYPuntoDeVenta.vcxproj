@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -161,10 +161,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\FactoryProducto.cpp" />
+    <ClCompile Include="source\Inventario.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\Producto.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AlertaStock.h" />
+    <ClInclude Include="include\FactoryProducto.h" />
+    <ClInclude Include="include\Inventario.h" />
+    <ClInclude Include="include\Observador.h" />
     <ClInclude Include="include\Prerequisites.h" />
+    <ClInclude Include="include\Producto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
