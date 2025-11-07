@@ -1,4 +1,5 @@
 #include "Inventario.h"
+#include "RegistroVentas.h"
 
 void 
 Inventario::cargarDesdeJSON(const std::string& ruta) {
@@ -50,18 +51,36 @@ void Inventario::eliminarProducto(const std::string& codigo) {
 		);
 }
 
-void 
-Inventario::venderProducto(const std::string& codigo, int cantidad) {
-		for (const auto& producto : m_productos) {
-			if (producto->getCodigo() == codigo) {
-				int nuevaCantidad = producto->getCantidad() - cantidad;
-				producto->setCantidad(nuevaCantidad);
-				if (nuevaCantidad < 5) { // umbral de stock bajo
-					notificarStockBajo(codigo, producto->getNombre(), nuevaCantidad);
-				}
+void Inventario::setRegistroVentas(RegistroVentas* registro) {
+	m_registroVentas = registro;
+}
+
+void Inventario::venderProducto(const std::string& codigo, int cantidad) {
+	for (auto& productos : m_productos) {
+		if (productos->getCodigo() == codigo) {
+			if (productos->getCantidad() < cantidad) {
+				std::cout << "Stock insuficiente para realizar la venta." << std::endl;
 				return;
 			}
+
+			int nuevaCant = productos->getCantidad() - cantidad;
+			productos->setCantidad(nuevaCant);
+
+			double total = productos->getPrecio() * cantidad;
+			std::cout << "Venta realizada: " << cantidad << " x " << productos->getNombre()
+				<< " = $" << total << std::endl;
+
+			if (m_registroVentas)
+				m_registroVentas->registrarVenta(productos->getCodigo(), 
+				productos->getNombre(), cantidad, productos->getPrecio());
+
+			if (nuevaCant < 5)
+				notificarStockBajo(productos->getCodigo(), productos->getNombre(), nuevaCant);
+
+			return;
 		}
+	}
+	std::cout << "Producto no encontrado." << std::	endl;
 }
 
 void 
@@ -93,3 +112,4 @@ Inventario::notificarStockBajo(const std::string& productoCodigo,
 			observador->onStockBajo(productoCodigo, nombre, cantidad);
 		}
 }
+

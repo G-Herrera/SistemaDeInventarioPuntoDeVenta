@@ -3,7 +3,9 @@
 #include "Producto.h"
 #include "FactoryProducto.h"
 #include "Observador.h"
-#include <vector>
+
+class RegistroVentas;
+
 class 
 Inventario {
 public:
@@ -16,6 +18,7 @@ public:
 	void eliminarProducto(const std::string& codigo);
 	void venderProducto(const std::string& codigo, int cantidad);
 	void comprarProducto(const std::string& codigo, int cantidad);
+	void setRegistroVentas(RegistroVentas* registro);
 
 	void mostrarProductos() const;
 
@@ -28,4 +31,5 @@ public:
 private:
 	std::vector<std::shared_ptr<Producto>> m_productos;
 	std::vector<Observador*> m_observadores;
+	RegistroVentas* m_registroVentas = nullptr;
 };

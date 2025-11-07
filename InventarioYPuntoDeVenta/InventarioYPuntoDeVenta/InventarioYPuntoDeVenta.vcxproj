@@ -165,10 +165,12 @@
     <ClCompile Include="source\Inventario.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\Producto.cpp" />
+    <ClCompile Include="source\RegistroVentas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\AlertaStock.h" />
     <ClInclude Include="include\FactoryProducto.h" />
+    <ClInclude Include="include\RegistroVentas.h" />
     <ClInclude Include="include\Inventario.h" />
     <ClInclude Include="include\Observador.h" />
     <ClInclude Include="include\Prerequisites.h" />

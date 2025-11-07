@@ -1,20 +1,20 @@
 [
-  {
-    "codigo": "A001",
-    "nombre": "Manzana",
-    "precio": 5.5,
-    "cantidad": 10
-  },
-  {
-    "codigo": "A002",
-    "nombre": "Banana",
-    "precio": 6.0,
-    "cantidad": 15
-  },
-  {
-    "codigo": "A003",
-    "nombre": "Naranja",
-    "precio": 4.0,
-    "cantidad": 8
-  }
+    {
+        "cantidad": 10,
+        "codigo": "A001",
+        "nombre": "Manzana",
+        "precio": 2.0
+    },
+    {
+        "cantidad": 15,
+        "codigo": "A002",
+        "nombre": "Banana",
+        "precio": 6.0
+    },
+    {
+        "cantidad": 8,
+        "codigo": "A003",
+        "nombre": "Naranja",
+        "precio": 2.0
+    }
 ]
