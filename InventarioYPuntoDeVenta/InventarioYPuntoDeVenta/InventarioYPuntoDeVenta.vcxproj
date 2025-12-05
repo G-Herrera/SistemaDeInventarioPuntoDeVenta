@@ -162,19 +162,36 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\FactoryProducto.cpp" />
+    <ClCompile Include="source\Gasolina.cpp" />
+    <ClCompile Include="source\Gasolineria.cpp" />
+    <ClCompile Include="source\GeneradorDeTickets.cpp" />
     <ClCompile Include="source\Inventario.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\PagoEnEfectivo.cpp" />
+    <ClCompile Include="source\PagoTDB.cpp" />
+    <ClCompile Include="source\PagoTDC.cpp" />
+    <ClCompile Include="source\ProcesadorDePago.cpp" />
     <ClCompile Include="source\Producto.cpp" />
     <ClCompile Include="source\RegistroVentas.cpp" />
+    <ClCompile Include="source\Sistema.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\AlertaStock.h" />
+    <ClInclude Include="include\Gasolina.h" />
     <ClInclude Include="include\FactoryProducto.h" />
+    <ClInclude Include="include\Gasolineria.h" />
+    <ClInclude Include="include\GeneradorDeTickets.h" />
+    <ClInclude Include="include\PagoEnEfectivo.h" />
+    <ClInclude Include="include\PagoTDB.h" />
+    <ClInclude Include="include\PagoTDC.h" />
+    <ClInclude Include="include\ProcesadorDePago.h" />
     <ClInclude Include="include\RegistroVentas.h" />
     <ClInclude Include="include\Inventario.h" />
     <ClInclude Include="include\Observador.h" />
     <ClInclude Include="include\Prerequisites.h" />
     <ClInclude Include="include\Producto.h" />
+    <ClInclude Include="include\Sistema.h" />
+    <ClInclude Include="include\TiposDePago.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

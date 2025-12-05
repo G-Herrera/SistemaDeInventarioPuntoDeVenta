@@ -162,3 +162,17 @@ Inventario::notificarStockBajo(const std::string& productoCodigo,
 		}
 }
 
+/**
+ * @brief Busca un producto en el inventario por su código.
+ * @param codigo Código del producto a buscar.
+ * @return Puntero compartido al producto encontrado o nullptr si no se encuentra.
+ */
+std::shared_ptr<Producto> 
+Inventario::buscarProducto(const std::string& codigo) {
+	for (auto& producto : m_productos) {
+		if (producto->getCodigo() == codigo)
+			return producto;
+	}
+	return nullptr;
+}
+

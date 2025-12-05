@@ -88,6 +88,14 @@ public:
 	notificarStockBajo(const std::string& productoCodigo, 
 	const std::string& nombre, int cantidad);
  
+	/**
+	 * @brief Busca un producto en el inventario por su código.
+	 * @param codigo Código del producto a buscar.
+	 * @return Puntero compartido al producto encontrado o nullptr si no se encuentra.
+	 */
+	std::shared_ptr<Producto> 
+	buscarProducto(const std::string& codigo);
+
 private:
 	std::vector<std::shared_ptr<Producto>> m_productos;///< Vector de productos en el inventario
 	std::vector<Observador*> m_observadores;///< Vector de observadores del inventario
